@@ -1,133 +1,75 @@
-# Repository Title
+# STHDF class template 2026-2027
 
-> Tento repozitár je súčasťou KNIFE/CAS ekosystému.
+Toto je šablóna repozitára pre predmet **Systémové myslenie v IT a digitálna
+fabrikácia** (FIIT STU). Neklonuje sa cez GitHub Classroom — každý študent si
+z nej urobí **vlastný, čistý klon bez histórie** a pracuje vo svojom repozitári.
 
+## 1. Predpoklady
 
-#Rýchla navigácia
+- nainštalovaný [Git](https://git-scm.com/downloads)
+- vlastný GitHub účet
 
+## 2. Vytvor si vlastný klon (bez histórie)
 
+Klonovanie tejto šablóny normálnym `git clone` by ti do repozitára prenieslo
+aj celú jej históriu — to nechceme. Namiesto toho spusti:
 
-[01-Zoznam hrubý ](/docs/sk/knifes/overview.md)
-
-[02-Zoznam s detailami- tabuľka ](/docs/sk/knifes/knife_overview/KNIFE_Overview_List.md)
-
-[03-Zoznam s detailami -blog](/docs/sk/knifes/knife_overview/KNIFE_Overview_Details.md)
-
-
-## 🧾 Popis
-Sem pridaj stručný opis účelu repozitára.
-
-## 📁 Štruktúra
-- `docs/` – dokumentácia
-- `src/` – zdrojový kód (ak existuje)
-- `tags.yaml` – metadáta
-- `meta.json` – pre AI, API alebo Pages
-
-## 🔗 Prepojenia
-Tento repozitár je súčasťou organizácie XYZ a patrí do vrstvy ABC.
-
----
-
-*Generované podľa KNIFE štandardov v rámci inicializácie projektu.*
-    -----------------------------------------------
-
-    
-# 🧪 Šablóna projektu – Dev/Prod Branch Model
-
-Tento repozitár slúži ako **template** pre nové projekty, ktoré budú používať jednoduchý, ale efektívny vývojový model postavený na dvoch hlavných vetvách (`branches`):
-
----
-
-## 🌳 Branch štruktúra
-
-| Branch | Účel | Viditeľnosť | Kto ho používa |
-|--------|------|--------------|----------------|
-| `main` | **Produkčné prostredie** – hotový obsah pripravený na publikovanie alebo zdieľanie. | Verejný (napr. GitHub Pages) | Všetci |
-| `dev`  | **Vývojové prostredie** – experimenty, testovanie, úpravy. Obsah nemusí byť stabilný. | Zvyčajne privátny | Autori, študenti, tím |
-
----
-
-## 🔄 Odporúčaný workflow
-
-1. 🔧 **Pracuj v `dev` branche**  
-   Všetky zmeny, nové stránky, alebo úpravy najprv rob v `dev`.
-
-2. 🧪 **Testuj a kontroluj**  
-   Pred publikovaním si všetko otestuj (napr. lokálne v MkDocs alebo Pages).
-
-3. 🔀 **Zlúč (`merge`) `dev` → `main`**  
-   Ak je obsah pripravený, sprav merge do `main` (viď nižšie).
-
-4. 🌐 **Publikuj z `main`**  
-   V prípade GitHub Pages alebo iných nástrojov sa zverejňuje iba obsah `main`.
-
----
-
-## 🔀 Ako spraviť merge `dev` → `main`
-
-Existujú 2 hlavné možnosti:
-
-### 🟢 A) Cez GitHub rozhranie (odporúčané pre začiatočníkov)
-
-1. Na GitHube prepnite vetvu na `dev`.
-2. Kliknite na **"Compare & pull request"**.
-3. Skontrolujte rozdiely a kliknite **"Create pull request"**.
-4. Po revízii kliknite na **"Merge pull request"** a potom **"Confirm merge"**.
-
-➡️ Týmto sa obsah z `dev` prenesie do `main`.
-
----
-
-### 🧑‍💻 B) Cez príkazový riadok (pre pokročilých)
----
-
-
-### Vytvorenie novej vetvy `dev` zo `main`:
-
-```
-git checkout main
-git checkout -b dev
-git push -u origin dev
-```
-# Uisti sa, že máš aktuálne dáta
-git fetch origin
-
-```
-```
-# Prepnúť sa na hlavný branch
-```
-git checkout main
-```
-# Zlúčiť zmeny z dev do main
-git merge origin/dev
-```
-# Pushnúť na server
-git push origin main
-```
-# KNIFE Overview
-
-Krátky popis repozitára a odkaz na web.
-
-- 🌐 Web: https://knife-framework.github.io/knifes_overview/
-- 📚 Dokumentácia: `/docs/sk`
-- ⚙️ Build/Deploy: pozri **[Makefile-README.md](./Makefile-README.md)**
-
-## Rýchly štart
-
+```bash
+git clone --depth 1 https://github.com/06-STH-Projects/2026_sthdf_class_template.git ST-042-MojeMeno
+cd ST-042-MojeMeno
+rm -rf .git
+git init
+git add -A
+git commit -m "Initial commit"
 ```
 
-make dev          # lokálny náhľad
-make check-links  # rýchla kontrola odkazov
-make mode         # zistí, či ideš Worktree alebo Actions
+Výsledok: priečinok `ST-042-MojeMeno/` obsahuje celý obsah šablóny, ale ako
+**nový, samostatný git repozitár s jedným commitom** — žiadna história
+šablóny sa neprenáša.
 
+> Skript, ktorý spraví presne toto isté jedným príkazom, je v
+> [`tools/clone-student-template.sh`](tools/clone-student-template.sh):
+> `./clone-student-template.sh ST-042-MojeMeno`
+
+### Pomenovanie priečinka
+
+- **Individuálna práca:** `ST-XXX-MojeMeno` (napr. `ST-042-JanNovak`)
+- **Tímový projekt:** `PRJ-YYY-NazovProjektu` (napr. `PRJ-017-SmartClock`)
+
+Toto pomenovanie (`ST-XXX` / `PRJ-YYY`) sa používa aj neskôr, keď budeš svoje
+výstupy publikovať do triedneho repozitára — drž sa ho od začiatku.
+
+## 3. Založ si vlastný repozitár na GitHube
+
+1. Na [github.com/new](https://github.com/new) si založ **prázdny** repozitár
+   (bez README, bez `.gitignore` — tie už máš z klonu).
+2. Pripoj ho ako remote a pushni:
+
+```bash
+git remote add origin <URL-tvojho-noveho-repozitara>
+git branch -M main
+git push -u origin main
 ```
+
+Odteraz pracuješ vo svojom vlastnom repozitári, nezávisle od šablóny.
+
+## 4. Čo je vnútri
+
+| Priečinok | Obsah |
+|---|---|
+| `content/docs/sk/` (`en/`) | tvoj obsah — 7Ds, SDLC, Q12, STHDF, KNIFE |
+| `core/` | zdieľané nástroje a automatizácia (Makefile targets, generátory) |
+| `config/` | konfigurácia jednotlivých metodík |
+| `publishing/docusaurus/` | Docusaurus stránka, ak si obsah chceš publikovať |
+
+Rýchly prehľad dostupných príkazov: `make help`
+
+## 5. Odkazy
+
+- 🧭 Portál predmetu: [sthdf.systemthinking.sk](https://sthdf.systemthinking.sk)
+- 📚 KNIFE dokumentácia: [knifes.systemthinking.sk](https://knifes.systemthinking.sk)
 
 ## License
 
-This repository uses a **dual license**:
-
-- **Code and scripts**: [MIT License](./LICENSE)  
-- **Educational content and documentation (`.md` files, methodologies, notes)**: [CC-BY 4.0 License](./LICENSE-DOCS)  
-
-This means you are free to use and adapt the code with minimal restrictions, and you may freely
-share and remix the educational content as long as you provide proper attribution.
+- **Kód a skripty**: [MIT License](./LICENSE)
+- **Vzdelávací obsah a dokumentácia** (`.md` súbory, metodiky, poznámky): [CC-BY 4.0 License](./LICENSE-DOCS)
