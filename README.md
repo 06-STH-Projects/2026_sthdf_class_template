@@ -63,7 +63,14 @@ Odteraz pracuješ vo svojom vlastnom repozitári, nezávisle od šablóny.
 
 Tento predmet nepoužíva GitHub Classroom sync — tvoj repozitár je od
 šablóny aj od triedneho repozitára nezávislý, takže sa tam tvoj výstup
-nedostane sám. Keď je hotový:
+nedostane sám. **Do triedneho repa ide len prehľad** (About Me,
+Knowledge Contribution, Project Summary, Project Outcomes, Pitch, Final
+Presentation, Reflexia) s odkazmi na tvoj plný repozitár — **nie celý
+repozitár samotný.**
+
+Vyučujúci ti vopred pridelí číslo `ST0XX` (roster) — triedny repozitár
+už má pre teba pripravený priečinok `students/ST0XX/`. Keď je výstup
+hotový:
 
 1. Na GitHube forkni [`class_sthdf_2026-2027`](https://github.com/06-STH-Projects/class_sthdf_2026-2027)
    (tlačidlo **Fork**).
@@ -73,20 +80,23 @@ nedostane sám. Keď je hotový:
    ```bash
    git clone https://github.com/<tvoj-ucet>/class_sthdf_2026-2027.git
    cd class_sthdf_2026-2027
-   git checkout -b submit/ST-042-MojeMeno
+   git checkout -b submit/ST025
    ```
 
-3. Skopíruj svoj výstup (bez `.git/`) do `submissions/ST-042-MojeMeno/`
-   (alebo `submissions/PRJ-017-NazovProjektu/` pre tímový projekt):
+3. Uprav SVOJ pridelený priečinok (napr. `ST025` — použi číslo z
+   rosteru), nie celý repozitár skopírovaný odinakiaľ:
+   `content/docs/sk/class_sthdf_dashboard/.../students/ST025/` — doplň
+   `about-me/`, `knowledge-contribution/`, `project-summary/`,
+   `project-outcomes/`, `pitch-presentation/`, `final-presentation/`,
+   `reflexia/` s odkazmi na tvoj plný GitHub repozitár:
 
    ```bash
-   cp -r ../ST-042-MojeMeno submissions/ST-042-MojeMeno
-   git add submissions/ST-042-MojeMeno
-   git commit -m "submit: ST-042-MojeMeno"
-   git push -u origin submit/ST-042-MojeMeno
+   git add content/docs/sk/class_sthdf_dashboard/*/students/ST025
+   git commit -m "submit: ST025 deliverables"
+   git push -u origin submit/ST025
    ```
 
-4. Na GitHube otvor **Pull Request** z `submit/ST-042-MojeMeno` do `main`
+4. Na GitHube otvor **Pull Request** z `submit/ST025` do `main`
    triedneho repozitára.
 
 Podrobnejšie vysvetlenie (aj prečo takto a nie inak) je v
