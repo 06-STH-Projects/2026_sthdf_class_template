@@ -59,7 +59,25 @@ Odteraz pracuješ vo svojom vlastnom repozitári, nezávisle od šablóny.
 > obyčajný osobný GitHub účet — nič iné netreba zakladať. Ak GitHub účet
 > ešte nemáš, založ si ho zadarmo na [github.com/join](https://github.com/join).
 
-## 4. Tvoj výstup a triedny repozitár
+## 4. Vytvor si svojich 7 povinných sekcií
+
+Klon zatiaľ neobsahuje hotové súbory na vyplnenie — vytvoríš si ich
+jedným príkazom:
+
+```bash
+make S31-sthdf-new STHDF_NAME=ST-042-MojeMeno STHDF_TITLE="ST-042 Moje Meno" LOCALE=sk
+```
+
+Výsledok: `content/docs/sk/sthdf/ST-042-MojeMeno/students/` — priečinok
+so 7 sekciami (About Me, Knowledge Contribution, Project Summary,
+Project Outcomes, Pitch Presentation, Final Presentation, Reflexia),
+každá ako samostatný podpriečinok s `index.md` na vyplnenie. Začni od
+`students/index.md` — je to rozcestník s checklistom.
+
+> `STHDF_NAME` použi rovnaké ako názov priečinka z kroku 2 (`ST-XXX-...`
+> / `PRJ-YYY-...`).
+
+## 5. Tvoj výstup a triedny repozitár
 
 Tento predmet nepoužíva GitHub Classroom sync — tvoj repozitár je od
 šablóny aj od triedneho repozitára úplne nezávislý a **taký aj
@@ -67,9 +85,7 @@ zostáva**. Prenos do triedneho dashboardu (`students/ST0XX/`) rieši
 vyučujúci na svojej strane — nie je to tvoja úloha.
 
 Tvoja jediná úloha:
-1. Vyplň si vo vlastnom repozitári všetkých 7 sekcií (About Me,
-   Knowledge Contribution, Project Summary, Project Outcomes, Pitch
-   Presentation, Final Presentation, Reflexia).
+1. Vyplň si vo vlastnom repozitári všetkých 7 sekcií z kroku 4.
 2. Zisti si svoje pridelené číslo `ST0XX` (roster u vyučujúceho).
 3. Zdieľaj odkaz na svoj hotový repozitár tam, kde ti povie vyučujúci.
 
@@ -77,7 +93,7 @@ Podrobnejšie vysvetlenie (aj prečo takto a nie inak) je v
 [K000119 – Ako si vytvoriť čistý klon triedneho repozitára](https://knifes.systemthinking.sk/sk/knifes/K000119-klon-triedneho-repozitara)
 (krok 6).
 
-## 5. Čo je vnútri
+## 6. Čo je vnútri
 
 | Priečinok | Obsah |
 |---|---|
@@ -88,7 +104,7 @@ Podrobnejšie vysvetlenie (aj prečo takto a nie inak) je v
 
 Rýchly prehľad dostupných príkazov: `make help`
 
-## 6. Odkazy
+## 7. Odkazy
 
 - 🧭 Portál predmetu: [sthdf.systemthinking.sk](https://sthdf.systemthinking.sk)
 - 📚 KNIFE dokumentácia: [knifes.systemthinking.sk](https://knifes.systemthinking.sk)
