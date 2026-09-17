@@ -59,45 +59,19 @@ Odteraz pracuješ vo svojom vlastnom repozitári, nezávisle od šablóny.
 > obyčajný osobný GitHub účet — nič iné netreba zakladať. Ak GitHub účet
 > ešte nemáš, založ si ho zadarmo na [github.com/join](https://github.com/join).
 
-## 4. Publikuj výstup do triedneho repozitára
+## 4. Tvoj výstup a triedny repozitár
 
 Tento predmet nepoužíva GitHub Classroom sync — tvoj repozitár je od
-šablóny aj od triedneho repozitára nezávislý, takže sa tam tvoj výstup
-nedostane sám. **Do triedneho repa ide len prehľad** (About Me,
-Knowledge Contribution, Project Summary, Project Outcomes, Pitch, Final
-Presentation, Reflexia) s odkazmi na tvoj plný repozitár — **nie celý
-repozitár samotný.**
+šablóny aj od triedneho repozitára úplne nezávislý a **taký aj
+zostáva**. Prenos do triedneho dashboardu (`students/ST0XX/`) rieši
+vyučujúci na svojej strane — nie je to tvoja úloha.
 
-Vyučujúci ti vopred pridelí číslo `ST0XX` (roster) — triedny repozitár
-už má pre teba pripravený priečinok `students/ST0XX/`. Keď je výstup
-hotový:
-
-1. Na GitHube forkni [`class_sthdf_2026-2027`](https://github.com/06-STH-Projects/class_sthdf_2026-2027)
-   (tlačidlo **Fork**).
-2. Naklonuj si svoj fork (toto už je normálny `git clone` — históriu
-   triedneho repa tu chceš zachovať):
-
-   ```bash
-   git clone https://github.com/<tvoj-ucet>/class_sthdf_2026-2027.git
-   cd class_sthdf_2026-2027
-   git checkout -b submit/ST025
-   ```
-
-3. Uprav SVOJ pridelený priečinok (napr. `ST025` — použi číslo z
-   rosteru), nie celý repozitár skopírovaný odinakiaľ:
-   `content/docs/sk/class_sthdf_dashboard/.../students/ST025/` — doplň
-   `about-me/`, `knowledge-contribution/`, `project-summary/`,
-   `project-outcomes/`, `pitch-presentation/`, `final-presentation/`,
-   `reflexia/` s odkazmi na tvoj plný GitHub repozitár:
-
-   ```bash
-   git add content/docs/sk/class_sthdf_dashboard/*/students/ST025
-   git commit -m "submit: ST025 deliverables"
-   git push -u origin submit/ST025
-   ```
-
-4. Na GitHube otvor **Pull Request** z `submit/ST025` do `main`
-   triedneho repozitára.
+Tvoja jediná úloha:
+1. Vyplň si vo vlastnom repozitári všetkých 7 sekcií (About Me,
+   Knowledge Contribution, Project Summary, Project Outcomes, Pitch
+   Presentation, Final Presentation, Reflexia).
+2. Zisti si svoje pridelené číslo `ST0XX` (roster u vyučujúceho).
+3. Zdieľaj odkaz na svoj hotový repozitár tam, kde ti povie vyučujúci.
 
 Podrobnejšie vysvetlenie (aj prečo takto a nie inak) je v
 [K000119 – Ako si vytvoriť čistý klon triedneho repozitára](https://knifes.systemthinking.sk/sk/knifes/K000119-klon-triedneho-repozitara)
