@@ -12,7 +12,9 @@ z nej urobí **vlastný, čistý klon bez histórie** a pracuje vo svojom repozi
 ## 2. Vytvor si vlastný klon (bez histórie)
 
 Klonovanie tejto šablóny normálnym `git clone` by ti do repozitára prenieslo
-aj celú jej históriu — to nechceme. Namiesto toho spusti:
+aj celú jej históriu — to nechceme. Postav sa v termináli do priečinka,
+**v ktorom** má vzniknúť tvoj projekt (napr. `~/Skola/STHDF/`) — príkaz nižšie
+si `ST-042-MojeMeno` vytvorí sám ako podpriečinok. Potom spusti:
 
 ```bash
 git clone --depth 1 https://github.com/06-STH-Projects/2026_sthdf_class_template.git ST-042-MojeMeno
@@ -53,7 +55,45 @@ git push -u origin main
 
 Odteraz pracuješ vo svojom vlastnom repozitári, nezávisle od šablóny.
 
-## 4. Čo je vnútri
+> **Žiadny osobitný "školský server" neexistuje.** Repozitár z kroku 3 je
+> obyčajný osobný GitHub účet — nič iné netreba zakladať. Ak GitHub účet
+> ešte nemáš, založ si ho zadarmo na [github.com/join](https://github.com/join).
+
+## 4. Publikuj výstup do triedneho repozitára
+
+Tento predmet nepoužíva GitHub Classroom sync — tvoj repozitár je od
+šablóny aj od triedneho repozitára nezávislý, takže sa tam tvoj výstup
+nedostane sám. Keď je hotový:
+
+1. Na GitHube forkni [`class_sthdf_2026-2027`](https://github.com/06-STH-Projects/class_sthdf_2026-2027)
+   (tlačidlo **Fork**).
+2. Naklonuj si svoj fork (toto už je normálny `git clone` — históriu
+   triedneho repa tu chceš zachovať):
+
+   ```bash
+   git clone https://github.com/<tvoj-ucet>/class_sthdf_2026-2027.git
+   cd class_sthdf_2026-2027
+   git checkout -b submit/ST-042-MojeMeno
+   ```
+
+3. Skopíruj svoj výstup (bez `.git/`) do `submissions/ST-042-MojeMeno/`
+   (alebo `submissions/PRJ-017-NazovProjektu/` pre tímový projekt):
+
+   ```bash
+   cp -r ../ST-042-MojeMeno submissions/ST-042-MojeMeno
+   git add submissions/ST-042-MojeMeno
+   git commit -m "submit: ST-042-MojeMeno"
+   git push -u origin submit/ST-042-MojeMeno
+   ```
+
+4. Na GitHube otvor **Pull Request** z `submit/ST-042-MojeMeno` do `main`
+   triedneho repozitára.
+
+Podrobnejšie vysvetlenie (aj prečo takto a nie inak) je v
+[K000119 – Ako si vytvoriť čistý klon triedneho repozitára](https://knifes.systemthinking.sk/sk/knifes/K000119-klon-triedneho-repozitara)
+(krok 6).
+
+## 5. Čo je vnútri
 
 | Priečinok | Obsah |
 |---|---|
@@ -64,7 +104,7 @@ Odteraz pracuješ vo svojom vlastnom repozitári, nezávisle od šablóny.
 
 Rýchly prehľad dostupných príkazov: `make help`
 
-## 5. Odkazy
+## 6. Odkazy
 
 - 🧭 Portál predmetu: [sthdf.systemthinking.sk](https://sthdf.systemthinking.sk)
 - 📚 KNIFE dokumentácia: [knifes.systemthinking.sk](https://knifes.systemthinking.sk)
