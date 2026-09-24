@@ -71,8 +71,8 @@ tsconfig.*          text eol=lf
 *.ai    binary
 *.sketch binary
 
-# —— HTML5 exporty a statika: drž LF
-publishing/docusaurus/static/** text eol=lf
+# —— HTML5 exporty a statika: bez EOL transformácie (môže obsahovať binárky aj HTML5 exporty)
+publishing/docusaurus/static/** -text
 
 # —— Vendor / build artefakty (ak sú v repo, nerenormalizovať EOL)
 node_modules/**  -text
